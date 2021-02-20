@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des inscrits{% endblock %}
+
+{% block body %}
+    <div class="header">
+    <h1>Recherchez l'âme sœur !</h1>
+    {{ include('sport_practice_by_sportsman/_form.html.twig') }}
+    </div>
+    <h1>Liste des inscrits</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Département</th>
+                <th>Email</th>
+                <th>Sport</th>
+                <th>Niveau</th>
+                <th>Accéder aux profils</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sport_practice_by_sportsman in sport_practice_by_sportsmen %}
+            <tr>
+                <td>{{ sport_practice_by_sportsman.SportsmanData.Prenom }}</td>
+                <td>{{ sport_practice_by_sportsman.SportsmanData.Nom }}</td>
+                <td>{{ sport_practice_by_sportsman.SportsmanData.Departement }}</td>
+                <td>{{ sport_practice_by_sportsman.SportsmanData.Email }}</td>
+                <td>{{ sport_practice_by_sportsman.SportData.Loisir }}</td>
+                <td>{{ sport_practice_by_sportsman.Niveau }}</td>
+                <td>
+                    <a href="{{ path('sport_practice_by_sportsman_show', {'ID': sport_practice_by_sportsman.ID}) }}"><button type="button" class="btn btn-primary">Voir</button></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Pas d'inscrit</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {# <a href="{{ path('sport_practice_by_sportsman_new') }}"><button type="button" class="btn btn-success">S'ajouter un sport</button></a> #}
+
+{% endblock %}

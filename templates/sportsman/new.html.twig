@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row intro">
+            <div class="col intro">
+                <div class="row">
+                    <div class="col resume rounded shadow">
+                        <h2>Si pour vous, trouver l'amour c'est du sport, essayez Sport Dating !</h2><br>
+                        <h3>Sport Dating : le site de rencontre entre sportifs</h3>
+                        <h1><i class="fas fa-heartbeat"></i></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <h1>De nombreux sports représentés, pourquoi pas le vôtre ?</h1>
+            </div>
+            <div class="row d-flex justify-content-center">
+                {% for sport in sports %}
+                <div class="col-3 m-3 p-3 shadow sport rounded">{{ sport.Loisir }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    <div id="formAccueil">
+    <h1>Entrez votre adresse email pour continuer</h1>
+    {{ include('sportsman/_form.html.twig') }}
+    </div>
+
+
+
+
+{% endblock %}

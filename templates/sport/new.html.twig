@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un sport{% endblock %}
+
+{% block body %}
+    <h1>Ajouter un sport</h1>
+
+    {{ include('sport/_form.html.twig') }}
+
+    <a href="{{ path('sport_practice_by_sportsman_new') }}"><button type="button" class="btn btn-secondary">Retour</button></a>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit SportPracticeBySportsman{% endblock %}
+
+{% block body %}
+    <h1>Edit SportPracticeBySportsman</h1>
+
+    {{ include('sport_practice_by_sportsman/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('sport_practice_by_sportsman_index') }}"><button type="button" class="btn btn-secondary">Retour</button></a>
+
+    {{ include('sport_practice_by_sportsman/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un compte{% endblock %}
+
+{% block body %}
+    <div class="header">
+    <h1>Créer un compte</h1>
+    <p>Votre sport n'est pas dans la liste ? Aucun problème !</p>
+    <a href="{{ path('sport_new') }}"><button type="button" class="btn btn-success">Ajouter un sport</button></a>
+    </div>
+    {{ include('sport_practice_by_sportsman/_form.html.twig') }}
+
+    <a href="{{ path('sport_practice_by_sportsman_index') }}"><button type="button" class="btn btn-secondary">Retour</button></a>
+{% endblock %}
